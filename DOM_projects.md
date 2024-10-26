@@ -1,9 +1,9 @@
-#Small Javascript projects solution codes
+# Small Javascript projects solution codes
 
-##project link
+## project link
 [link](https://stackblitz.com/edit/stackblitz-starters-4bdtu2?file=index.html,styles.css,script.js)
 
-##Color schema
+## Color schema
 ```Javascript
 const buttons = document.querySelectorAll('.button');
 
