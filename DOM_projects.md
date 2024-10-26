@@ -60,3 +60,100 @@ form.addEventListener('submit', function (e) {
 
 
 ```
+
+# Digital clock
+```Javascript
+const clock = document.getElementById('clock')
+
+setInterval(()=>{
+    let date = new Date();
+    clock.innerHTML = date.toTimeString();
+}, 1000)
+```
+# Guess the number 
+```Javascript
+const guesfield = document.querySelector('#guessField');
+const submit = document.querySelector('#subt');
+const prevGuess = document.querySelector('.guesses');
+const startover = document.querySelector('.resultParas');
+let remaining = document.querySelector('.lastResult');
+const info1 = document.querySelector('.lowOrHi');
+let randomNumber = parseInt(Math.random() * 10 + 1);
+console.log(`Random number is ${randomNumber}`);
+console.log(guesfield);
+const p = document.createElement('p');
+let prevnum = [];
+let remainGuess = 1;
+let playgame = true;
+
+if (playgame) {
+    submit.addEventListener('click', function (e) {
+        e.preventDefault();
+        let guess = parseInt(guesfield.value);
+        console.log(guess);
+        validate(guess);
+    });
+}
+
+function validate(guess) {
+    if (isNaN(guess)) {
+        alert('Enter a number');
+    } else if (guess < 1 || guess > 100) {
+        alert('Enter a number in the range of 1 to 100');
+    } else if (remainGuess === 11) {
+        displayguess(guess);
+        displaymessage(`Game over, the random number is ${randomNumber}`);
+        endgame();
+    } else {
+        checkguess(guess);
+        displayguess(guess);
+    }
+}
+
+function checkguess(guess) {
+    if (guess === randomNumber) {
+        displaymessage('Wohhu!! You are the winner');
+    } else if (guess < randomNumber) {
+        displaymessage('Number is greater');
+    } else {
+        displaymessage('Number is lesser');
+    }
+}
+
+function displaymessage(message) {
+    info1.innerHTML = message;
+}
+
+function displayguess(guess) {
+    guesfield.value = '';
+    prevnum.push(guess);
+    prevGuess.innerHTML += `${guess}, `;
+    remainGuess++;
+    remaining.innerHTML = `${11 - remainGuess}`;
+}
+
+function endgame() {
+    guesfield.value = '';
+    guesfield.setAttribute('disabled', '');
+    p.classList.add('button');
+    p.innerHTML = `<h2 id="ne">start new game</h2>`;
+    playgame = false;
+    startover.appendChild(p);
+    newgame();
+}
+
+function newgame() {
+    const newbutton = document.querySelector('#ne');
+    newbutton.addEventListener('click', (e) => {
+        prevGuess.innerHTML = '';
+        prevnum = [];
+        remainGuess = 1;
+        remaining.innerHTML = `${11 - remainGuess}`;
+        randomNumber = parseInt(Math.random() * 10 + 1);
+        guesfield.removeAttribute('disabled');
+        playgame = true;
+        startover.removeChild(p);
+    });
+}
+
+```
