@@ -157,3 +157,65 @@ function newgame() {
 }
 
 ```
+# Disco color
+```javascript
+const randomColor = function(){
+    const hex = '0123456789ABCDEF'
+    let color = '#'
+    for(let i=0; i<6; i++){
+      color+=hex[Math.floor(Math.random()*16)]
+    }
+    return color;
+  }
+  
+  let interval;
+  function colorchange(){
+    const color = randomColor();
+    document.querySelector('body').style.backgroundColor = color;
+    
+    
+    document.querySelectorAll('button').forEach((button) => {
+        button.style.backgroundColor = color;
+    });
+
+    
+  }
+  document.querySelector('#start').addEventListener('click', ()=>{
+      interval = setInterval(colorchange, 100)
+    
+    
+  })
+  
+  document.querySelector('#stop').addEventListener('click', ()=>{
+    console.log('clear');
+    clearInterval(interval);
+    interval = null;
+   
+  })
+```
+# Keyboard
+```javascript
+console.log('Project 5');
+const insert = document.getElementById('insert');
+//insert is here a blank div
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+      <div>
+      <table>
+  <tr>
+    <th>key</th>
+    <th>keycode</th>
+    <th>code</th>
+  </tr>
+  <tr>
+    <td>${e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code} </td>
+  </tr>
+</table>
+      </div>
+      `;
+});
+
+```
+
