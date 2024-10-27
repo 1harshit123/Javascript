@@ -28,7 +28,7 @@ buttons.forEach(function (button) {
 });
 
 ```
-# BMI calculator
+## BMI calculator
 ```Javascript
 const form = document.querySelector('form');
 // this usecase will give you empty
@@ -61,7 +61,7 @@ form.addEventListener('submit', function (e) {
 
 ```
 
-# Digital clock
+## Digital clock
 ```Javascript
 const clock = document.getElementById('clock')
 
@@ -157,7 +157,7 @@ function newgame() {
 }
 
 ```
-# Disco color
+## Disco screen
 ```javascript
 const randomColor = function(){
     const hex = '0123456789ABCDEF'
@@ -193,7 +193,7 @@ const randomColor = function(){
    
   })
 ```
-# Keyboard
+## Keyboard
 ```javascript
 console.log('Project 5');
 const insert = document.getElementById('insert');
