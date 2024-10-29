@@ -1,0 +1,31 @@
+--> We cannot update and change the constant variable but we can change the key of a constant object.
+-->In javascript "==" only check the value of objects example if i write 5=="5" so it will give true but if we 
+do not want to check the only value so we use strich version of comparison operator "===" which also check the data
+type
+-->some important type conversions
+conversion into from number 
+string->number(if string is a number)
+NULL->0
+undefined->NaN
+true->1
+false->0
+conversion to boolean
+1->true
+0->false
+""->false
+"df"->false
+-->Datatypes
+primitive->string, number, boolean, null, undefined, symbol(stack memory type)
+Reference->Array, object, function(heap memory type)
+
+-->Objects 
+Singelton forms only when we make an object using construct function
+symbol datatype used in [] in object declaration and console.log as well
+
+-->this function can only be used in object environment not in functions
+
+-->object cannot be return in arrow function without using ()
+
+-->Call stack(Life)[last in first out]=In JavaScript, the call stack is like a to-do list for functions in your program. It follows the rule of "Last In, First Out," meaning the last thing added is the first to be done. A call stack is like a script's roadmap for a JavaScript Engine
+
+-->Read documentation of fetch => very Important to learn

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Chai aur js</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let intervalid;
+
+    document.querySelector('#start').addEventListener('click', () => {
+        if (!intervalid) {
+            intervalid = setInterval(satdate, 1, 'hi');
+        }
+    });
+
+    document.querySelector('#stop').addEventListener('click', () => {
+        clearInterval(intervalid);
+        intervalid = null;
+    });
+
+    function satdate(str) {
+        console.log(str, Date.now());
+    }
+
+
+</script>
+
+</html>
